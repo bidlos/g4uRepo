@@ -1,9 +1,8 @@
 <?php
-
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+include_once 'function.php';
 
 $html = file_get_contents('https://myfin.by/currency/minsk');
 
@@ -19,8 +18,6 @@ foreach ($entry as $row) {
 
 $usd = $data['list']['1'];
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -35,32 +32,28 @@ $usd = $data['list']['1'];
 
 <body>
 
-
-new qweqweq
-
-    <div class="container">
-        <div class="row">
-            <div class="mx-auto" style="margin-top: 15%;">
-                <div class="row">
-                    <form action="#" method="GET">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<form action="#" method="GET">
                         <h1 style="position: center;">
                             USD - <?php echo $usd; ?>
                         </h1>
-                        <div class="col-md-12" style="margin-top: 65px;"> <input type="text" name="cours" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-                        <div class="col-md-12" style="margin-top: 65px;">
-                            <?php if (isset($_GET['exchange'])) {
-                                $sum = $_GET['cours'] * $usd;
-                                echo '<h1>' . $_GET['cours'] . '$ = ' . $sum . ' р.</h1>';
-                            } ?>
-                        </div>
-                        <div class="col-md-12" style="margin-top: 65px;"> <button type="submit" name="exchange" class="btn btn-primary mb-2" style="height: 60px;width: 100%;">Пересчитать</button>
-                        </div>
+</div>
+<div class="col-md-12">
+<input type="text" name="cours" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+<?php if (isset($_GET['exchange'])) {
+    $sum = $_GET['cours'] * $usd;
+    echo '<h1>' . $_GET['cours'] . '$ = ' . $sum . ' р.</h1>';
+}?>
+</div>
+<div class="col-md-12">
+<button type="submit" name="exchange" class="btn btn-primary mb-2" style="height: 60px;width: 100%;">Пересчитать</button>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+
 
 </body>
 
