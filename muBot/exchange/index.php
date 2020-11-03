@@ -36,7 +36,8 @@ $usd = $data['list']['1'];
 <body>
 
 
-new
+new qweqweq
+
     <div class="container">
         <div class="row">
             <div class="mx-auto" style="margin-top: 15%;">
