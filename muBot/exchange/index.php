@@ -2,22 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include_once 'function.php';
-
-$html = file_get_contents('https://myfin.by/currency/minsk');
-
+include_once __DIR__ . 'function.php';
 include_once __DIR__ . '/phpQuery-onefile.php';
-$doc = phpQuery::newDocument($html);
-
-$data['list'] = array();
-
-$entry = $doc->find('tr td');
-foreach ($entry as $row) {
-    $data['list'][] = pq($row)->text();
-}
-
-$usd = $data['list']['1'];
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -43,8 +29,7 @@ $usd = $data['list']['1'];
 <div class="col-md-12">
 <input type="text" name="cours" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 <?php if (isset($_GET['exchange'])) {
-    $sum = $_GET['cours'] * $usd;
-    echo '<h1>' . $_GET['cours'] . '$ = ' . $sum . ' р.</h1>';
+    $exchangeClass
 }?>
 </div>
 <div class="col-md-12">
