@@ -7,7 +7,6 @@ ini_set('display_errors', 1);
 
 include_once __DIR__ . '/function.php';
 
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -51,7 +50,7 @@ include_once __DIR__ . '/function.php';
                                 <option value="blr">BLR</option>
                             </select>
                             <div class="col-md-8">
-                                <input type="text" name="cours" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="text" name="cours" class="form-control">
                             </div>
                         </div>
                     </div>
