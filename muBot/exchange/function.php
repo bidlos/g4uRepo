@@ -71,10 +71,7 @@ class exchange extends database
             $iGive = $val[$sell];
             $iTake = $val[$buy];
         }
-
-
-            $sum = ((float)$iGive * (float)$input) * (float)$iTake;
-
+        
             $give = $iGive/100;
             $take = $iTake/100;
 
