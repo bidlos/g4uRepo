@@ -61,17 +61,28 @@ class exchange extends database
     }
     public function exschangeCurrency($sell, $buy, $input)
     {
-        $buy=(float)$buy;
-        if ($input != true && $buy != true && $sell != true) {
-            $query = $this->connect->query("SELECT $buy FROM `ts_exchange` ORDER BY `id` DESC");
-            $new = $query->fetch_row();
-            $sum = ((float)$sell + (float)$input) * (float)$new['0'];
 
-            return $sum;
-
-        } else {
+        if ($input <= 0 || $buy == 'clear') {
             return 'no val';
         }
+            
+        $query = $this->connect->query("SELECT $sell, $buy FROM `ts_exchange` ORDER BY `id` ASC");
+        foreach($query as $val){
+            $iGive = $val[$sell];
+            $iTake = $val[$buy];
+        }
+
+
+            $sum = ((float)$iGive * (float)$input) * (float)$iTake;
+
+            $give = $iGive/100;
+            $take = $iTake/100;
+
+            $fin = $give / $take * (float)$input;
+
+            return number_format($fin, 2, '.', ' ');
+
+
     }
 }
 

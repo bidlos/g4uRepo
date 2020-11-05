@@ -1,8 +1,13 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include_once __DIR__ . '/function.php';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -21,8 +26,8 @@ include_once __DIR__ . '/function.php';
         <div class="row">
             <div class="col-md-12 text-center" style="margin-top: 10%;">
                 <form action="#" method="GET">
-                    <h3>USD <?php echo $exchangeClass->showCurrency('usd') . ' - ' . $exchangeClass->showCurrency('usd_sell'); ?>
-                        EUR <?php echo $exchangeClass->showCurrency('eur') . ' - ' . $exchangeClass->showCurrency('eur_sell'); ?>
+                    <h3>USD <?= $exchangeClass->showCurrency('usd') . ' - ' . $exchangeClass->showCurrency('usd_sell'); ?>
+                        EUR <?= $exchangeClass->showCurrency('eur') . ' - ' . $exchangeClass->showCurrency('eur_sell'); ?>
                         ЗЛОТЫЕ <span class="badge badge-secondary">10</span> <?php echo $exchangeClass->showCurrency('zlot') . ' - ' . $exchangeClass->showCurrency('zlot_sell'); ?></h3>
 
             </div>
@@ -31,15 +36,15 @@ include_once __DIR__ . '/function.php';
                     <div class="col-md-9">
                         <div class="input-group mb-3">
                             <select class="custom-select" id="inputGroupSelect01" name="sell">
-                                <!-- <option selected>Куплю</option>
-                                <option value="1">USD</option>
-                                <option value="2">EUR</option>
-                                <option value="6">ZLOT</option> -->
-                                <option value="blr" selected>BLR</option>
+                                <option selected value="clear" selected>Продам</option>
+                                <option value="usd">USD</option>
+                                <option value="eur">EUR</option>
+                                <option value="zlot">ZLOT</option>
+                                <option value="blr">BLR</option>
                             </select>
 
                             <select class="custom-select" id="inputGroupSelect01" name="buy">
-                                <option selected>Куплю</option>
+                                <option selected value="clear">Куплю</option>
                                 <option value="usd">USD</option>
                                 <option value="eur">EUR</option>
                                 <option value="zlot">ZLOT</option>
@@ -53,7 +58,7 @@ include_once __DIR__ . '/function.php';
                     <div class="col-md-3">
                         <h3><?php
                             if (isset($_GET['exchange'])) {
-                                echo $exchangeClass->exschangeCurrency('blr', $_GET['buy'], $_GET['cours']);
+                                echo $exchangeClass->exschangeCurrency($_GET['sell'], $_GET['buy'], $_GET['cours']);
                             }
                             ?></h3>
                     </div>
@@ -66,7 +71,11 @@ include_once __DIR__ . '/function.php';
 
 
             <div class="col-md-12 text-center" style="margin-top: 50px;">
-                <?php $exchangeClass->listCurrencyDate();
+                <?= $exchangeClass->listCurrencyDate();
+
+
+                echo gettype($_GET['buy']);
+                echo gettype($_GET['cours']);
                 ?>
             </div>
         </div>
