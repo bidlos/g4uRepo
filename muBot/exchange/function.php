@@ -62,7 +62,7 @@ class exchange extends database
     public function exschangeCurrency($sell, $buy, $input)
     {
         $buy=(float)$buy;
-        if ($input != true && $buy != true && $sell != true) {
+        if ($input == true || $buy == true || $sell == true) {
 
             return 'no val';
         } 
