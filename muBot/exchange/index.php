@@ -71,12 +71,7 @@ include_once __DIR__ . '/function.php';
 
 
             <div class="col-md-12 text-center" style="margin-top: 50px;">
-                <?= $exchangeClass->listCurrencyDate();
-
-
-                echo gettype($_GET['buy']);
-                echo gettype($_GET['cours']);
-                ?>
+                <?= $exchangeClass->listCurrencyDate(); ?>
             </div>
         </div>
     </div>
