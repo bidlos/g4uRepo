@@ -1,1 +1,1 @@
-<?= 'Main Controller'; ?>
+<?php $test = 'Main Controller'; ?>
