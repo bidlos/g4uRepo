@@ -1,6 +1,0 @@
-{
-    "require": {
-        "longman/telegram-bot": "^0.64.0",
-        "telegram-bot/api": "^2.3"
-    }
-}
