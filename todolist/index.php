@@ -7,13 +7,11 @@
         {
             return 1;
         }
-        public function get()
+        public static function get()
         {
             return self::dbm();
         }
     }
 
-    $classDb = new Db();
-
-    echo $classDb->get();
+    echo Db::get();
 ?>
