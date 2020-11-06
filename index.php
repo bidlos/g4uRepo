@@ -1,0 +1,1 @@
+<?= 'Hello <a href="' . $_SERVER['REQUEST_URI'] . 'exchange/"> Курсы валют! </a>'; ?>
