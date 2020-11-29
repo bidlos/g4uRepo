@@ -1,4 +1,4 @@
-<footer class="text-muted">
+<footer class="text-muted" style="background: #fff;">
     <div class="container">
         <p class="float-right">
             <a href="#">Back to top</a>
@@ -6,6 +6,22 @@
         <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
         <p>New to Bootstrap? <a href="https://getbootstrap.com">Visit the homepage</a> or read our <a href="/docs/4.5/getting-started/introduction/">getting started guide</a>.</p>
     </div>
+
+
+
+    <?php
+
+if($_GET['server'] == 'ene'){
+    echo '123<br>';
+}
+
+var_dump($_SERVER["REMOTE_ADDR"]);
+
+?>
+
+
+
+
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -18,12 +34,3 @@
 </body>
 
 </html>
-<?php
-
-if($_GET['server'] == 'ene'){
-    echo '123<br>';
-}
-
-var_dump($_SERVER["REMOTE_ADDR"]);
-
-?>

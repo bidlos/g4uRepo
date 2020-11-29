@@ -36,7 +36,17 @@ session_start();
     <link href="album.css" rel="stylesheet">
 </head>
 
-<body>
+<body  style="
+background-image: url(https://cdn.hipwallpaper.com/i/42/5/i5yZYl.jpg);
+-moz-background-size: cover;
+-o-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+width: 100%;
+height: 300px;
+">
 
     <script defer>
         (function(i, s, o, g, r, a, m) {

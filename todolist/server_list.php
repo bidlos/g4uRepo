@@ -1,13 +1,8 @@
 <?php
 include_once __DIR__ . '/view/header.php';
 ?>
-<main role="main" style="background-image: url(https://cdn.hipwallpaper.com/i/42/5/i5yZYl.jpg);
-
-background-size: cover;  /* Для закрипления*/">
+<main role="main" style="margin-top: 30px; margin-bottom: 30px;">
     <div class="container">
-
-
-
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">MU Online</h1>
@@ -104,6 +99,7 @@ background-size: cover;  /* Для закрипления*/">
         </div>
     </div>
 </main>
+<br>
 
 <?php
 
