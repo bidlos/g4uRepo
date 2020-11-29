@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 
 include_once __DIR__ . '/function.php';
 
-
+var_dump($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
