@@ -43,7 +43,7 @@ include_once  __DIR__ . "/../function/function.php";
 </head>
 
 <body  style="
-background-image: url(https://cdn.hipwallpaper.com/i/42/5/i5yZYl.jpg);
+background-image: url(img/bg.jpg);
 -moz-background-size: cover;
 -o-background-size: cover;
 -webkit-background-size: cover;
