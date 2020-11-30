@@ -87,3 +87,5 @@ class exchange extends database
 }
 
 $exchangeClass = new exchange();
+
+echo '123';

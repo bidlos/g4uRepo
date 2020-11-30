@@ -59,52 +59,47 @@ include_once __DIR__ . '/view/header.php';
 
                     <!-- Список серверов -->
                     <div class="col-md-12">
-                        <div class="card">
+                        <?php
+                    foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
+                        if ($value['server_status'] == 2) {
+                            echo '
+                            <div class="card">
                             <h5 class="card-header">ТОП Сервер</h5>
                             <div class="card-body">
-                                <h5 class="card-title"><img src="https://img.icons8.com/doodle/25/000000/crown--v1.png" /> ENERGYMU.RU <img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> 2453</h5>
-                                <p class="card-text">THE OPENING OF THE SERVER 5.12.2020/20:00 FOR MOSCOW TIME
-                                    | Version:Season 6 ep 3
-                                </p>
-                                <a href="https://energymu.ru/"><img src="https://img.icons8.com/flat_round/64/000000/right--v1.png" /></a>
-
+                                <h5 class="card-title"><img src="https://img.icons8.com/doodle/25/000000/crown--v1.png" /> ' . $value['server_name'] . ' <img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> ' . $value['server_vote'] . '</h5>
+                                <p class="card-text">' . mb_strimwidth($value['server_description'], 0, 250, "...") . '</p>
+                                <a href="https://energymu.ru/" class="btn btn-alert"><img src="https://img.icons8.com/flat_round/64/000000/right--v1.png" /></a>
                             </div>
+                            </div>
+                            ';
+                        }
+                    }
+                    ?>
+                    скайп
+                    телеграм
+                    почта
+                    
 
-                        </div>
                     </div>
                     <div class="col-md-9" style="margin-top: 30px;">
                         <ul class="list-unstyled">
-                            <li class="media">
-                                <img src="https://energymu.ru/templates/new_zig_zag/images/icon-status-1.png" class="mr-3" alt="...">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1">MUDECAY.COM</h5>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                                    <br><img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> 1567
-                                </div>
-                                <a href="#" class="btn"><img src="https://img.icons8.com/flat_round/40/000000/right--v1.png" /></a>
-                            </li>
-                            <li class="media my-4">
-                                <img src="https://energymu.ru/templates/new_zig_zag/images/icon-status-1.png" class="mr-3" alt="...">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1">ESCAPEMU.COM</h5>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                                    <br><img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> 877
 
-                                </div>
-
-                                <a href="#" class="btn"><img src="https://img.icons8.com/flat_round/40/000000/right--v1.png" /></a>
-
-                            </li>
-                            <li class="media">
-                                <img src="https://energymu.ru/templates/new_zig_zag/images/icon-status-1.png" class="mr-3" alt="...">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1">UNIVERSEMU.NET</h5>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                                    <br><img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> 426
-                                </div>
-                                <a href="#" class="btn"><img src="https://img.icons8.com/flat_round/40/000000/right--v1.png" /></a>
-
-                            </li>
+                            <?php
+foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
+    if ($value['server_status'] == 1) {
+        echo '
+<li class="media">
+<img src="' . $value['server_img'] . '" class="mr-3" alt="...">
+<div class="media-body">
+    <h5 class="mt-0 mb-1">' . $value['server_title'] . '</h5>
+    ' . mb_strimwidth($value['server_description'], 0, 120, "...") . '
+    <br><img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> ' . $value['server_vote'] . '
+</div>
+<a href="' . $value['server_url'] . '" class="btn"><img src="https://img.icons8.com/flat_round/40/000000/right--v1.png" /></a>
+</li>
+';}
+}
+?>
                         </ul>
                     </div>
                     <div class="col-md-3" style="margin-top: 30px;">
