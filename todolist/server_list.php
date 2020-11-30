@@ -102,6 +102,6 @@ include_once __DIR__ . '/view/header.php';
 <br>
 
 <?php
-
+var_dump($_GET);
 include_once __DIR__ . '/view/footer.php';
 ?>

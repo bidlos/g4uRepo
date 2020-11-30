@@ -42,7 +42,7 @@ include_once  __DIR__ . "/../function/function.php";
     <link href="album.css" rel="stylesheet">
 </head>
 
-<body  style="
+<body style="
 background-image: url(img/bg.jpg);
 -moz-background-size: cover;
 -o-background-size: cover;
@@ -104,7 +104,7 @@ height: 300px;
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
-                     
+
                         <h4 class="text-white">Выбери где зависнешь</h4>
                         <p class="text-muted">Только тут самые качественные сервера, такие как MU Online, Lineage 2, World of Warcraft...</p>
 
@@ -125,7 +125,17 @@ height: 300px;
                 <a href="/todolist" class="navbar-brand d-flex align-items-center">
                     <img src="https://img.icons8.com/clouds/50/000000/homer-simpson.png" />
                     <strong>Hommer Games</strong>
+
                 </a>
+
+
+
+                <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="siteauth_bot" data-size="large" data-radius="0" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+                <script type="text/javascript">
+                    function onTelegramAuth(user) {
+                        alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
+                    }
+                </script>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
