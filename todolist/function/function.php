@@ -8,17 +8,30 @@ class Database
     }
 }
 
-class ServerInfo extends Database {
+class ServerInfo extends Database
+{
     public function ShowServer($name)
     {
         $arr = [];
 
         $query = $this->connect->query("SELECT * FROM `vote_server`");
-        foreach ($query as $v){
-            $arr [] = $v;
+        foreach ($query as $v) {
+            $arr[] = $v;
         }
 
         return $arr;
+    }
+    public function ServerShow($name)
+    {
+        $arr = [];
+
+        $query = $this->connect->query("SELECT * FROM `vote_server`");
+        foreach ($query as $v) {
+            if ($v['server_name'] == $name) {
+                $arr[] = $v;
+                return $arr;
+            }
+        }
     }
 }
 

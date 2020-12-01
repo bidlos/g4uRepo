@@ -7,10 +7,6 @@ include_once __DIR__ . '/view/header.php';
         <div class="container">
             <h1 class="jumbotron-heading">Выбери где зависнешь</h1>
             <p class="lead text-muted">Только тут самые качественные сервера, такие как MU Online, Lineage 2, World of Warcraft</p>
-            <!-- <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                </p> -->
         </div>
     </section>
 
