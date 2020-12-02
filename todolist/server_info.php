@@ -21,13 +21,22 @@ $arr[] = $ServerInfoClass->ServerShow('energymu.ru1');
 
             
         </section>
+        
 
         <div class="album py-5 bg-light">
+        <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="<?= $_SERVER['HTTP_REFERER']; ?>">Назад</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><?= $_GET['server']; ?></li>
+  </ol>
+</nav>
             <div class="container">
 
                 <div class="row">
+                    
 
                     <div class="col-md-12" style="margin-top: 30px;">
+                    
                         <ul class="list-unstyled">
                         <li class="media">
                                     <img src="<?= $arr[0][0]['server_img']; ?>" class="mr-3" alt="...">
