@@ -16,7 +16,7 @@ include_once  __DIR__ . "/../function/function.php";
     <title>Document</title>
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css" crossorigin="anonymous">
 
     <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#563d7c">
@@ -40,6 +40,7 @@ include_once  __DIR__ . "/../function/function.php";
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
+    <script src="/dist/js/bootstrap.js"></script>
 </head>
 
 <body style="

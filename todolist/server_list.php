@@ -25,9 +25,9 @@ include_once __DIR__ . '/view/header.php';
                     <!-- Список серверов -->
                     <div class="col-md-12">
                         <?php
-foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
-    if ($value['server_status'] == 2) {
-        echo '
+                        foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
+                            if ($value['server_status'] == 2) {
+                                echo '
                             <div class="card">
                             <h5 class="card-header">ТОП Сервер</h5>
                             <div class="card-body">
@@ -37,18 +37,18 @@ foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
                             </div>
                             </div>
                             ';
-    }
-}
-?>
+                            }
+                        }
+                        ?>
                     </div>
-                                        <div class="col-md-6" style="margin-top: 30px;">
-                            <ul class="list-group">
+                    <div class="col-md-6" style="margin-top: 30px;">
+                        <ul class="list-group">
                             <li class="list-group-item list-group-item-action list-group-item-danger">Выбор пользователей</li>
 
-  <?php
-foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
-    if ($value['server_status'] >= 0) {
-        echo '
+                            <?php
+                            foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
+                                if ($value['server_status'] >= 0) {
+                                    echo '
         <li class="list-group-item">
 
         <img src="' . $value['server_img'] . '" class="mr-3" alt="..." height="30px">
@@ -60,18 +60,18 @@ foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
 
         <a href="http://' . $value['server_url'] . '" class="float-right" height="30px"><img src="https://img.icons8.com/dotty/30/000000/down-right.png"/></a>
         </li>';
-    }
-}
-?>
-</ul>
-                            </div>
-                             <div class="col-md-6" style="margin-top: 30px;">
-                            <ul class="list-group">
+                                }
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="col-md-6" style="margin-top: 30px;">
+                        <ul class="list-group">
                             <li class="list-group-item list-group-item-action list-group-item-primary">Скоро открытие</li>
-  <?php
-foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
-    if ($value['server_status'] >= 0) {
-        echo '
+                            <?php
+                            foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
+                                if ($value['server_status'] >= 0) {
+                                    echo '
         <li class="list-group-item">
 
         <img src="' . $value['server_img'] . '" class="mr-3" alt="..." height="30px">
@@ -83,20 +83,20 @@ foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
 
         <a href="http://' . $value['server_url'] . '" class="float-right" height="30px"><img src="https://img.icons8.com/dotty/30/000000/down-right.png"/></a>
         </li>';
-    }
-}
-?>
-</ul>
-                            </div>
+                                }
+                            }
+                            ?>
+                        </ul>
+                    </div>
                     <div class="col-md-9" style="margin-top: 30px;">
-                    <h3>Бодрый старт</h3>
-                    <hr>
+                        <h3>Бодрый старт</h3>
+                        <hr>
                         <ul class="list-unstyled">
 
                             <?php
-foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
-    if ($value['server_status'] == 1) {
-        echo '
+                            foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
+                                if ($value['server_status'] == 1) {
+                                    echo '
                                     <li class="media">
                                     <img src="' . $value['server_img'] . '" class="mr-3" alt="...">
                                     <div class="media-body">
@@ -107,9 +107,9 @@ foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
                                     <a href="' . $value['server_url'] . '" class="btn"><img src="https://img.icons8.com/flat_round/40/000000/right--v1.png" /></a>
                                     </li>
                                     ';
-    }
-}
-?>
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                     <div class="col-md-3" style="margin-top: 30px;">
