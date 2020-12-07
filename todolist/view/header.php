@@ -18,9 +18,9 @@ include_once  __DIR__ . "/../function/function.php";
 
     <link rel="stylesheet" href="dist/css/bootstrap.min.css" crossorigin="anonymous">
 
-    <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#563d7c">
 
+    <link rel="shortcut icon" href="favicon.ico">
 
     <style>
         .bd-placeholder-img {
@@ -45,20 +45,17 @@ include_once  __DIR__ . "/../function/function.php";
 
 <body style="
 background-image: url(img/bg.jpg);
--moz-background-size: cover;
--o-background-size: cover;
--webkit-background-size: cover;
 background-size: cover;
-background-repeat: no-repeat;
-background-position: center center;
-width: 100%;
-height: 300px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: inherit;
+    background-color: black;
 ">
 
 
 
     <header>
-        <div class="collapse bg-dark" id="navbarHeader">
+        <div class="collapse bg-dark" id="navbarHeader"">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
@@ -81,19 +78,21 @@ height: 300px;
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container d-flex justify-content-between">
                 <a href="/todolist" class="navbar-brand d-flex align-items-center">
-                    <img src="https://img.icons8.com/clouds/50/000000/homer-simpson.png" />
-                    <strong>Hommer Games</strong>
+                    <img src="img/logo.png" height="30px" />
+                    <strong>YourLegion</strong>
 
                 </a>
 
 
 
-                <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="siteauth_bot" data-size="large" data-radius="0" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+                <!-- <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="siteauth_bot" data-size="large" data-radius="0" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
                 <script type="text/javascript">
                     function onTelegramAuth(user) {
                         alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
                     }
-                </script>
+                </script> -->
+
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -34,40 +34,65 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="add_server.php" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите название сервера">
+                        <input type="text" name="server_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите название сервера">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Адрес сервера">
+                        <input type="text" name="server_url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Адрес сервера">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Описание сервера"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите название сервера">
+                        <textarea class="form-control" name="server_description" id="exampleFormControlTextarea1" rows="3" placeholder="Описание сервера"></textarea>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <select class="form-control">
                             <option>Выбор игры</option>
                             <option>Lineage II</option>
                             <option>MuOnline</option>
                             <option>WoW</option>
                         </select>
-                    </div>
+                    </div> -->
+
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Версия/сезон сервера">
-                        </div>
+                            <select class="form-control" name="server_version">
+                                <option>Версия игры</option>
+                                <option>97d-99i</option>
+                                <option>S1</option>
+                                <option>S2</option>
+                                <option>S3</option>
+                                <option>S4</option>
+                                <option>S5</option>
+                                <option>S6</option>
+                                <option>S7</option>
+                                <option>S8</option>
+                                <option>S9</option>
+                                <option>S10</option>
+                                <option>S11</option>
+                                <option>S12</option>
+                                <option>S13</option>
+                                <option>S14</option>
+                                <option>S15</option>
+
+                            </select> </div>
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Рейты">
+                            <input type="text" name="server_rate" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Рейты: X100">
                         </div>
                     </div>
+
+
                     <div class="form-group">
+                        <input id="datetime" name="server_dateopen" class="form-control" type="datetime-local">
+                    </div>
+
+
+
+
+                    <!-- <div class="form-group">
                         <label for="exampleFormControlFile1">Логотип сервера</label>
                         <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                    </div>
+                    </div> -->
 
                     <hr>
 
@@ -75,18 +100,18 @@
 
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Skype">
+                            <input type="text" name="server_skype" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Skype">
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telegram">
+                            <input type="text" name="server_telegram" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telegram">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="VK">
+                            <input type="text" name="server_vk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="VK">
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                            <input type="text" name="server_email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                         </div>
                     </div>
 

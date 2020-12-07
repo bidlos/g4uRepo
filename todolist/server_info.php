@@ -1,20 +1,19 @@
 <?php
 include_once __DIR__ . '/view/header.php';
-
-$arr[] = $ServerInfoClass->ServerShow('energymu.ru1');
-
 ?>
+
 <main role="main" style="margin-top: 30px; margin-bottom: 30px;">
     <div class="container">
         <section class="jumbotron text-center">
             <div class="container">
                 <li class="media">
-                    <a href="#" class="btn"><img src="<?= $arr[0][0]['server_img']; ?>" /></a>
+                    <a href="#" class="btn"><img src="<?= $ServerInfoClass->ServerPageInfo($_GET['server'])['server_img']; ?>" /></a>
 
                     <div class="media-body">
-                        <h1 class="jumbotron-heading"><?= $arr[0][0]['server_name']; ?></h1>
-                        <p class="lead text-muted"><?= $arr[0][0]['server_title']; ?></p>
-                        <p class="lead text-muted"><img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> <?= $arr[0][0]['server_vote']; ?></p>
+                        <h1 class="jumbotron-heading"><?= $ServerInfoClass->ServerPageInfo($_GET['server'])['server_name']; ?></h1>
+                        <p class="lead text-muted"><?= $ServerInfoClass->ServerPageInfo($_GET['server'])['server_title']; ?></p>
+                        <p class="lead text-muted"><img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> <?= $ServerInfoClass->ServerPageInfo($_GET['server'])['server_vote']; ?></p>
+                        <form action="server_info.php?server=<?= $ServerInfoClass->ServerPageInfo($_GET['server'])['server_name']; ?>" method="post"><button class="btn btn-primary">Голосуй за сервер</button> <a href="http://<?= $ServerInfoClass->ServerPageInfo($_GET['server'])['server_url']; ?>" class="btn btn-primary">Перейти на проект</a></form>
                     </div>
                 </li>
             </div>
@@ -39,10 +38,10 @@ $arr[] = $ServerInfoClass->ServerShow('energymu.ru1');
 
                         <ul class="list-unstyled">
                             <li class="media">
-                                <img src="<?= $arr[0][0]['server_img']; ?>" class="mr-3" alt="...">
+                                <img src="<?= $ServerInfoClass->ServerPageInfo($_GET['server'])['server_img']; ?>" class="mr-3" alt="...">
                                 <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><?= $arr[0][0]['server_title']; ?></h5>
-                                    <p><?= nl2br($arr[0][0]['server_description']); ?></p>
+                                    <h5 class="mt-0 mb-1"><?= $ServerInfoClass->ServerPageInfo($_GET['server'])['server_title']; ?></h5>
+                                    <p><?= nl2br($ServerInfoClass->ServerPageInfo($_GET['server'])['server_description']); ?></p>
                                     <br>
                                 </div>
                                 <a href="' . $value['server_url'] . '" class="btn"><img src="https://img.icons8.com/flat_round/40/000000/right--v1.png" /></a>

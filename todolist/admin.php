@@ -2,39 +2,35 @@
 include_once __DIR__ . '/view/header.php';
 ?>
 <main role="main" style="margin-top: 30px; margin-bottom: 30px;">
-    <div class="container">
-        <nav id="navbar-example3" class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <nav class="nav nav-pills flex-column">
-                <a class="nav-link" href="#item-1">Пункт 1</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3 my-1" href="#item-1-1">Пункт 1-1</a>
-                    <a class="nav-link ml-3 my-1" href="#item-1-2">Пункт 1-2</a>
-                </nav>
-                <a class="nav-link" href="#item-2">Item2</a>
-                <a class="nav-link" href="#item-3">Item3</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3 my-1" href="#item-3-1">Пункт 3-1</a>
-                    <a class="nav-link ml-3 my-1" href="#item-3-2">Пункт 3-2</a>
-                </nav>
-            </nav>
-        </nav>
+    <div class="container" style="background:#fff;">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="?href=user">Пользователи</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?href=new_server">Новые Сервера</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?href=reklama">Реклама</a>
+                    </li>
 
-        <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
-            <h4 id="item-1">Пункт 1</h4>
-            <p>...</p>
-            <h5 id="item-1-1">Пункт 1-1</h5>
-            <p>...</p>
-            <h5 id="item-1-2">Пункт 2-2</h5>
-            <p>...</p>
-            <h4 id="item-2">Пункт 2</h4>
-            <p>...</p>
-            <h4 id="item-3">Пункт 3</h4>
-            <p>...</p>
-            <h5 id="item-3-1">Пункт 3-1</h5>
-            <p>...</p>
-            <h5 id="item-3-2">Пункт 3-2</h5>
-            <p>...</p>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <?php
+                if ($_GET['href'] == 'reklama') {
+                    include_once __DIR__ . '/admin/ads.php';
+                } elseif ($_GET['href'] == 'new_server') {
+                    include_once __DIR__ . '/admin/new_server.php';
+                } elseif ($_GET['href'] == 'user') {
+                    include_once __DIR__ . '/admin/user.php';
+                } else {
+                    echo 'Добро пожаловать';
+                }
+                ?>
+            </div>
         </div>
     </div>
 </main>

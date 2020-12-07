@@ -1,5 +1,7 @@
 <?php
 include_once __DIR__ . '/view/header.php';
+
+header('Location: https://gh.g4u.by/todolist/server_list.php');
 ?>
 <main role="main">
 
