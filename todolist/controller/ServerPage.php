@@ -4,7 +4,7 @@ include_once __DIR__ . '/Database.php';
 
 class ServerPage_Model extends Database_Controller
 {
-    public function Search_Controller($vote)
+    public function Search_Controller()
     {
 
 
