@@ -4,19 +4,17 @@ include_once __DIR__ . '/../controller/ServerPage.php';
 
 class ServerPage extends ServerPage_Model
 {
-    public function show()
+    public function SearchForm($post)
     {
-        
+        $arr = [
+            'version' => $post['version'],
+            'rate' => $post['rate']
+        ];
 
-        echo '
-        <form action="" method="post">
-        <input type="text" name="row">
-        <button name="submit">Submit</button>
-        </form>';
-        
-        if (isset($_POST['submit'])) {
-            echo '<strong>' . $this->FunctionName($_POST) . '</strong>';
-        }
+        foreach ($this->Search_Controller() as $key => $values){
+            echo $values['server_version'] . '<br>';
+    }
+        return $this->Search_Controller($post);
     }
 }
 

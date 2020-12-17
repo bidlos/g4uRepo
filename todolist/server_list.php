@@ -210,7 +210,7 @@ include_once __DIR__ . '/view/header.php';
                     <!-- ТОП Сервер -->
                     <div class="col-md-9">
                         <?php
-                        if (time() <= 1607602217) {
+                        if (time() <= 2607602217) {
                             foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
                                 if ($value['server_status'] == 2) {
                                     echo '
