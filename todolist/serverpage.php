@@ -23,29 +23,32 @@ include_once __DIR__ . '/view/header.php';
             </div>
         </section>
 
-    
+
 
         <div class="album py-5 bg-light">
             <div class="container">
 
                 <div class="row">
 
-                <?= $ServerPageClass->SearchForm($arr=['version' => 'S6', 'rate' => '1']) ?>
 
                     <!-- Search Filter -->
+                    <?= $ServerPageClass->ListServerButton() ?>
+                    <!-- <div class="form-group col-md-4">
+                        <h5 class="display-5">Выбери себе сервер</h5>
+                    </div>
 
-                    <div class="form-group col-md-5">
-                        <form action="server_search.php" method="post">
+                    <div class="form-group col-md-3">
+                        <form action="#" method="post">
                             <select class="custom-select" id="inputGroupSelect01" name="version" require>
-                                <option selected>Версия сервера...</option>
+                                <option value="0" selected>Выберите версию</option>
                                 <option value="0.97">0.97</option>
                                 <option value="S6">S6</option>
                                 <option value="S15">S15</option>
                             </select>
                     </div>
-                    <div class="form-group col-md-5">
-                        <select class="custom-select" id="inputGroupSelect01" name="rate">
-                            <option selected>Выберите рейты сервера...</option>
+                    <div class="form-group col-md-3">
+                        <select class="custom-select" id="inputGroupSelect01" name="rate" required>
+                            <option value="0" selected>Выберите рейты</option>
                             <option value="1">x1</option>
                             <option value="30">x30</option>
                             <option value="100">x100</option>
@@ -54,11 +57,10 @@ include_once __DIR__ . '/view/header.php';
                     <div class="form-group col-md-2">
                         <button class="btn btn-primary" name="search">Подобрать</button>
                         </form>
-                    </div>
-
+                    </div> -->
 
                     <?php
-                    if (isset($_POST['search'])) {
+                    if (isset($_GET['version'])) {
                     ?>
 
                         <div class="col-md-12">
@@ -75,24 +77,11 @@ include_once __DIR__ . '/view/header.php';
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?= $ServerPageClass->FunctionName($_GET['version']) ?>
 
-
-
-
-
-                                    <?php
-                                    echo '
-                                    <tr>
-                                    <th scope="row"><img src="https://img.icons8.com/plasticine/20/000000/gold-medal.png" /></th>
-                                    <td><a href="' . $_POST['rate'] . '">Name</a></td>
-                                    <td>' . $_POST['version'] . '</td>
-                                    <td><a href="' . $_POST['rate'] . '">' . $_POST['rate'] . '</td>
-                                    <td>12.23.20</td>
-                                    </tr>';
-                                    ?>
                                 </tbody>
                             </table>
-                            <a href="" class="btn btn-primary">Заглянуть глубже</a>
+                           
                         </div>
                     <?php
 
@@ -115,76 +104,29 @@ include_once __DIR__ . '/view/header.php';
 
                         <table class="table table-sm table-hover" style="background: #fff;">
                             <tbody>
-                                <?php
-                                foreach ($ServerInfoClass->ServerTop('server_name', 'server_vote', '5', 'DESC') as $key => $value) {
-                                    if ($value['server_status'] >= 0) {
-                                        
-                                        if($value['server_vote'] >= 100){
-                                            echo '
-                                            <tr>
-                                            <th scope="row"><img src="https://img.icons8.com/plasticine/20/000000/gold-medal.png" /></th>
-                                            <td><a href="server_info.php?server=' . $value['server_name'] . '">' . $value['server_title'] . '</a></td>
-                                            <td><img src="https://img.icons8.com/color/25/000000/ice-king.png"/></td>
-                                            <td>' . $value['server_version'] . '</td>
-                                            <td>X' . $value['server_rate'] . '</td>
-                                            <td><img src="https://img.icons8.com/plasticine/20/000000/filled-like.png" /> ' . $value['server_vote'] . '</td>
-                                            <td><a href="http://' . $value['server_url'] . '" class="float-right" height="20px"><img src="https://img.icons8.com/carbon-copy/30/000000/double-right.png"/></a></td>                                          
-                                            </tr>';
-                                        }else{
-                                            echo '
-                                            <tr>
-                                            <th scope="row"><img src="https://img.icons8.com/plasticine/20/000000/gold-medal.png" /></th>
-                                            <td><a href="server_info.php?server=' . $value['server_name'] . '">' . $value['server_title'] . '</a></td>
-                                            <td></td>
-                                            <td>' . $value['server_version'] . '</td>
-                                            <td>X' . $value['server_rate'] . '</td>
-                                            <td><img src="https://img.icons8.com/plasticine/20/000000/filled-like.png" /> ' . $value['server_vote'] . '</td>
-                                            <td><a href="http://' . $value['server_url'] . '" class="float-right" height="20px"><img src="https://img.icons8.com/carbon-copy/30/000000/double-right.png"/></a></td>                                          
-                                            </tr>';
-                                        }
-                                        
-
-                                    }
-                                }
-                                ?>
+                                <?= $ServerPageClass->ModulTop5('server_vote', '5', 'DESC') ?>
                             </tbody>
                         </table>
                     </div>
                     <!-- Server List Open -->
 
                     <!-- User Select -->
-
-
-
                     <div class="col-md-6" style="margin-top: 30px;">
                         <small>
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-action list-group-item-danger">Выбор пользователей</li>
                             </ul>
-                                <br>
+                            <br>
                             <table class="table table-sm table-hover">
                                 <tbody>
-                                    <?php
-                                    foreach ($ServerInfoClass->ServerTop('server_name', 'server_vote', 5, 'DESC') as $key => $value) {
-                                        if ($value['server_status'] >= 0) {
-                                            echo '
-                                                <tr>
-                                                    <td><a href="server_info.php?server=' . $value['server_name'] . '">' . $value['server_title'] . '</a></td>
-                                                    <td>' . $value['server_version'] . '</td>
-                                                    <td>X' . $value['server_rate'] . '</td>
-                                                    <td>' . $value['server_vote'] . '</td>
-                                                    <td><a href="http://' . $value['server_url'] . '" class="float-right" height="20px"><img src="https://img.icons8.com/carbon-copy/20/000000/double-right.png"/></a></td>                                          
-                                                </tr>';
-                                        }
-                                    }
-                                    ?>
+                                    <?= $ServerPageClass->ModulListServer('server_vote', 5, 'DESC') ?>
                                 </tbody>
                             </table>
 
                         </small>
                     </div>
                     <!-- User Select -->
-                                    
+
                     <!-- Open -->
 
                     <div class="col-md-6" style="margin-top: 30px;">
@@ -192,23 +134,10 @@ include_once __DIR__ . '/view/header.php';
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-action list-group-item-primary">Скоро открытие</li>
                             </ul>
-                                    <br>
+                            <br>
                             <table class="table table-sm table-hover">
                                 <tbody>
-                                    <?php
-                                    foreach ($ServerInfoClass->ServerTop('server_name', 'server_open', '5', 'ASC') as $key => $value) {
-                                        if ($value['server_status'] >= 0) {
-                                            echo '
-                                        <tr>
-                                        <td><a href="server_info.php?server=' . $value['server_name'] . '">' . $value['server_title'] . '</a></td>
-                                        <td>' . $value['server_version'] . '</td>
-                                        <td>X' . $value['server_rate'] . '</td>
-                                        <td>' . $value['server_open'] . '</td>
-                                        <td><a href="http://' . $value['server_url'] . '" class="float-right" height="20px"><img src="https://img.icons8.com/carbon-copy/20/000000/double-right.png"/></a></td>                                          
-                                        </tr>';
-                                        }
-                                    }
-                                    ?>
+                                    <?= $ServerPageClass->ModulListServer('server_open', '5', 'ASC') ?>
                                 </tbody>
                             </table>
 
@@ -219,9 +148,9 @@ include_once __DIR__ . '/view/header.php';
                     <!-- ТОП Сервер -->
                     <div class="col-md-9">
                         <?php
-                        if (time() <= 1607602217) {
+                        if (time() <= 2607602217) {
                             foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
-                                if ($value['server_status'] == 2) {
+                                if ($value['server_status'] == 3) {
                                     echo '
                             <div class="card">
                             <h5 class="card-header">ТОП Сервер</h5>
@@ -247,21 +176,7 @@ include_once __DIR__ . '/view/header.php';
 
                     <!-- Banner Block -->
 
-                    <div class="col-md-12" style="margin-top: 30px;">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+
 
                 </div>
             </div>
