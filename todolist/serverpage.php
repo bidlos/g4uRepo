@@ -66,7 +66,7 @@ include_once __DIR__ . '/view/header.php';
                         <div class="col-md-12">
                             <h3 class="display-4">Лови список!</h3>
                             <hr>
-                            <table class="table table-sm table-dark">
+                            <table class="table table-borderless table-hover table-sm table-dark">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>

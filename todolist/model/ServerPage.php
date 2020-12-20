@@ -81,13 +81,22 @@ class ServerPage extends ServerPage_Model
         foreach ($query as $val) {
             if ($val['server_status'] == 2) {
                 echo '
-            <tr style="background: #fff; color: gray;">
+            <tr class="table-light" style="color: gray;" >
             <th scope="row"><img src="https://img.icons8.com/plasticine/20/000000/gold-medal.png" /> VIP</th>
             <td><a href="server_info.php?server=' . $val['server_name'] . '">' . $val['server_name'] . '</a></td>
             <td>' . $val['server_version'] . '</td>
             <td>X' . $val['server_rate'] . '</td>
             <td>12.23.20</td>
             </tr>';
+            } elseif ($val['server_vote'] >= 100) {
+                echo '
+                <tr>
+                <th scope="row"><img src="https://img.icons8.com/ultraviolet/20/000000/plus.png"/> BEST</th>
+                <td><a href="server_info.php?server=' . $val['server_name'] . '">' . $val['server_name'] . '</a></td>
+                <td>' . $val['server_version'] . '</td>
+                <td>X' . $val['server_rate'] . '</td>
+                <td>12.23.20</td>
+                </tr>';
             } else {
                 echo '
                 <tr>
