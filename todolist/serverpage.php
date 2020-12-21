@@ -92,6 +92,7 @@ include_once __DIR__ . '/view/header.php';
                     }
                     ?>
                     <!-- Search Filter -->
+                    
                     <!-- Banner Block -->
                     <div class="col-md-6" style="margin-top: 30px;"><img src="img/test.jpeg" alt="" srcset="" style="width: 100%;"> </div>
                     <div class="col-md-6" style="margin-top: 30px;"><img src="img/1019-hoTm3.webp" alt="" srcset="" style="width: 100%;"> </div>

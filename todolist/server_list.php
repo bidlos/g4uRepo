@@ -33,31 +33,6 @@ include_once __DIR__ . '/view/header.php';
 
                     <!-- Search Filter -->
                     <?= $ServerPageClass->ListServerButton() ?>
-                    <!-- <div class="form-group col-md-4">
-                        <h5 class="display-5">Выбери себе сервер</h5>
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <form action="#" method="post">
-                            <select class="custom-select" id="inputGroupSelect01" name="version" require>
-                                <option value="0" selected>Выберите версию</option>
-                                <option value="0.97">0.97</option>
-                                <option value="S6">S6</option>
-                                <option value="S15">S15</option>
-                            </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <select class="custom-select" id="inputGroupSelect01" name="rate" required>
-                            <option value="0" selected>Выберите рейты</option>
-                            <option value="1">x1</option>
-                            <option value="30">x30</option>
-                            <option value="100">x100</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <button class="btn btn-primary" name="search">Подобрать</button>
-                        </form>
-                    </div> -->
 
                     <?php
                     if (isset($_GET['version'])) {
@@ -92,10 +67,12 @@ include_once __DIR__ . '/view/header.php';
                     }
                     ?>
                     <!-- Search Filter -->
+
                     <!-- Banner Block -->
                     <div class="col-md-6" style="margin-top: 30px;"><img src="img/test.jpeg" alt="" srcset="" style="width: 100%;"> </div>
                     <div class="col-md-6" style="margin-top: 30px;"><img src="img/1019-hoTm3.webp" alt="" srcset="" style="width: 100%;"> </div>
                     <!-- Banner Block -->
+                    
                     <!-- TOP Server List -->
                     <div class="col-sm-12 col-lg-12" style="margin-top: 30px;">
                         <div class="alert alert-secondary" role="alert">

@@ -56,24 +56,24 @@ background-size: cover;
 
     <header>
         <div class="collapse bg-dark" id="navbarHeader"">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-md-7 py-4">
+            <div class=" container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
 
-                        <h4 class="text-white">Выбери где зависнешь</h4>
-                        <p class="text-muted">Только тут самые качественные сервера, такие как MU Online, Lineage 2, World of Warcraft...</p>
+                    <h4 class="text-white">Выбери где зависнешь</h4>
+                    <p class="text-muted">Только тут самые качественные сервера, такие как MU Online, Lineage 2, World of Warcraft...</p>
 
-                    </div>
-                    <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-white">Навигация</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="<?= $_SERVER['REQUEST_URI']; ?>server_list.php?game=mu" class="text-white">MU Online</a></li>
-                            <li><a href="<?= $_SERVER['REQUEST_URI']; ?>server_list.php?game=la2" class="text-white">LineAge II</a></li>
-                            <li><a href="<?= $_SERVER['REQUEST_URI']; ?>server_list.php?game=wow" class="text-white">World of Warcraft</a></li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Навигация</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="<?= $_SERVER['REQUEST_URI']; ?>server_list.php?game=mu" class="text-white">MU Online</a></li>
+                        <li><a href="<?= $_SERVER['REQUEST_URI']; ?>server_list.php?game=la2" class="text-white">LineAge II</a></li>
+                        <li><a href="<?= $_SERVER['REQUEST_URI']; ?>server_list.php?game=wow" class="text-white">World of Warcraft</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
         </div>
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container d-flex justify-content-between">
@@ -83,14 +83,6 @@ background-size: cover;
 
                 </a>
 
-
-
-                <!-- <script async src="https://telegram.org/js/telegram-widget.js?14" data-telegram-login="siteauth_bot" data-size="large" data-radius="0" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
-                <script type="text/javascript">
-                    function onTelegramAuth(user) {
-                        alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
-                    }
-                </script> -->
 
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
