@@ -56,7 +56,7 @@ include_once __DIR__ . '/view/header.php';
 
                                 </tbody>
                             </table>
-                           
+
                         </div>
                     <?php
 
@@ -72,7 +72,7 @@ include_once __DIR__ . '/view/header.php';
                     <div class="col-md-6" style="margin-top: 30px;"><img src="img/test.jpeg" alt="" srcset="" style="width: 100%;"> </div>
                     <div class="col-md-6" style="margin-top: 30px;"><img src="img/1019-hoTm3.webp" alt="" srcset="" style="width: 100%;"> </div>
                     <!-- Banner Block -->
-                    
+
                     <!-- TOP Server List -->
                     <div class="col-sm-12 col-lg-12" style="margin-top: 30px;">
                         <div class="alert alert-secondary" role="alert">
@@ -86,6 +86,38 @@ include_once __DIR__ . '/view/header.php';
                         </table>
                     </div>
                     <!-- Server List Open -->
+
+                    <!-- ТОП Сервер -->
+                    <div class="col-md-9">
+                        <?php
+                        if (time() <= 2607602217) {
+                            foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
+                                if ($value['server_status'] == 3) {
+                                    echo '
+                            <div class="card">
+                            <h5 class="card-header">ТОП Сервер</h5>
+                            <div class="card-body">
+                                <h5 class="card-title"><img src="https://img.icons8.com/doodle/25/000000/crown--v1.png" /> <a href="server_info.php?server=' . $value['server_name'] . '">' . $value['server_name'] . '</a> <img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> ' . $value['server_vote'] . '</h5>
+                                <p class="card-text">' . mb_strimwidth($value['server_description'], 0, 650, "...") . '</p>
+                                <a href="https://energymu.ru/" class="btn btn-primary">Перейти на сервер</a>
+                            </div>
+                            </div>
+                            ';
+                                }
+                            }
+                        }
+
+                        ?>
+                    </div>
+                    <!-- ТОП Сервер -->
+
+                    <!-- Banner Block -->
+
+                    <div class="col-md-3">
+                        <img src="img/105628.gif" alt="" srcset="" style="width: 100%;">
+                    </div>
+
+                    <!-- Banner Block -->
 
                     <!-- User Select -->
                     <div class="col-md-6" style="margin-top: 30px;">
@@ -122,38 +154,23 @@ include_once __DIR__ . '/view/header.php';
                     </div>
                     <!-- Open -->
 
-                    <!-- ТОП Сервер -->
-                    <div class="col-md-9">
-                        <?php
-                        if (time() <= 2607602217) {
-                            foreach ($ServerInfoClass->ShowServer('server_name') as $key => $value) {
-                                if ($value['server_status'] == 3) {
-                                    echo '
-                            <div class="card">
-                            <h5 class="card-header">ТОП Сервер</h5>
+                    <!-- О Сайте -->
+                    <div class="col-md-12">
+                        <div class="card">
+                            <h5 class="card-header">О Нас</h5>
                             <div class="card-body">
-                                <h5 class="card-title"><img src="https://img.icons8.com/doodle/25/000000/crown--v1.png" /> <a href="server_info.php?server=' . $value['server_name'] . '">' . $value['server_name'] . '</a> <img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> ' . $value['server_vote'] . '</h5>
-                                <p class="card-text">' . mb_strimwidth($value['server_description'], 0, 650, "...") . '</p>
-                                <a href="https://energymu.ru/" class="btn btn-primary">Перейти на сервер</a>
+                                <div class="row">
+                                <div class="col-md-9">Мы стараемся собрать только исключительно качественные сервера MU Online! Мы стараемся собрать только исключительно качественные сервера MU Online!
+                                    Мы стараемся собрать только исключительно качественные сервера MU Online! Мы стараемся собрать только исключительно качественные сервера MU Online!
+                                    Мы стараемся собрать только исключительно качественные сервера MU Online! Мы стараемся собрать только исключительно качественные сервера MU Online!
+                                </div>
+                                <div class="col-md-3"><img src="img/logo.png" height="100px" /></div>
+                                </div>
                             </div>
-                            </div>
-                            ';
-                                }
-                            }
-                        }
 
-                        ?>
+                        </div>
                     </div>
-
-                    <!-- Banner Block -->
-
-                    <div class="col-md-3">
-                        <img src="img/105628.gif" alt="" srcset="" style="width: 100%;">
-                    </div>
-
-                    <!-- Banner Block -->
-
-
+                    <!-- О Сайте -->
 
                 </div>
             </div>

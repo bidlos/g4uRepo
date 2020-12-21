@@ -3,6 +3,7 @@
 define('BOT_TOKEN', '1411050390:AAGR761jiEdgc8iTBLPC9CJhOYiylsTrtAU'); // place bot token of your bot here
 
 function checkTelegramAuthorization($auth_data) {
+  
   $check_hash = $auth_data['hash'];
   unset($auth_data['hash']);
   $data_check_arr = [];
