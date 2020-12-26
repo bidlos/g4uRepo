@@ -32,6 +32,18 @@ class UserPage extends User_Model
             return '<h3>С возвращением боец</h3>';
         }
     }
+
+    public function checkUserLogin($id)
+    {
+        return $this->userDB_Controller($id);
+    }
+
+    public function testPDO()
+    {
+        $arr = $this->testPDO_Model();
+
+        return $arr;
+    }
 }
 
 $UserClass = new UserPage();

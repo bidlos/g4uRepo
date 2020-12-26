@@ -20,6 +20,7 @@ include_once __DIR__ . '/view/header.php';
             </div>
             <div class="col-md-12">
                 <?php
+                if (isset($_GET['href'])){
                 if ($_GET['href'] == 'reklama') {
                     include_once __DIR__ . '/admin/ads.php';
                 } elseif ($_GET['href'] == 'new_server') {
@@ -28,7 +29,7 @@ include_once __DIR__ . '/view/header.php';
                     include_once __DIR__ . '/admin/user.php';
                 } else {
                     echo 'Добро пожаловать';
-                }
+                }}
                 ?>
             </div>
         </div>

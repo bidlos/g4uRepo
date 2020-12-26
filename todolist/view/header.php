@@ -1,12 +1,19 @@
 <?php
 session_start();
 
-error_reporting(E_ALL);
+
+ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
 
 
-include_once  __DIR__ . "/../function/function.php";
+
+
+
+include_once  __DIR__ . "/../model/User.php";
+
+
 
 define('BOT_USERNAME', 'siteauth_bot'); // place username of your bot here
 
@@ -29,7 +36,6 @@ if (isset($_GET['logout'])) {
 // echo time() . ' - ' . $time;
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,6 +81,8 @@ background-size: cover;
     background-color: black;
 ">
 
+<a href="#" data-toggle="modal" data-target="#exampleModal" style="position:fixed;z-index:99999;bottom:50%;right:0;width:145px;height:122px;" title="Рейтинг серверов Mu Online">
+    <img src="img/banner.png" width="145" height="122" alt="Рейтинг серверов Mu Online" border="0"></a>
 
 
     <header>
@@ -137,7 +145,7 @@ background-size: cover;
                             $html .= "<img src=\"https://gh.g4u.by/todolist/img/test.jpeg\">";
                         }
 
-                        $html .= "<p><a href=\"?logout=1\">Log out</a></p>";
+                        $html .= "<p><a href=\"index.php?logout=1\">Log out</a></p>";
                     } else {
                         $bot_username = BOT_USERNAME;
 
@@ -163,3 +171,4 @@ background-size: cover;
 
         </div>
     </header>
+

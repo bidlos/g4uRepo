@@ -32,4 +32,21 @@ class User_Model extends Database_Controller
             ('" . $id . "','" . $name . "','" . $lastName . "','" . $login . "')");
         }
     }
+
+    public function testPDO_Model()
+    {
+        $query = $this->medoo->select(
+            'vote_server_user',
+            [
+                'user_id',
+                'user_name',
+
+                'ORDER' => [
+                    'user_id' => 'ASC',
+                    'LIMIT' => 1,
+                ]
+            ],
+        );
+        return $query;
+    }
 }

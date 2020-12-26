@@ -4,18 +4,7 @@ include_once __DIR__ . '/../controller/ServerPage.php';
 
 class ServerPage extends ServerPage_Model
 {
-    public function SearchForm($post)
-    {
-        $arr = [
-            'version' => $post['version'],
-            'rate' => $post['rate']
-        ];
 
-        foreach ($this->Search_Controller() as $key => $values) {
-            echo $values['server_version'] . '<br>';
-        }
-        return $this->Search_Controller();
-    }
 
     public function ModulListServer($row, $num, $sort)
     {
@@ -122,6 +111,54 @@ class ServerPage extends ServerPage_Model
             echo '<a href="?version=' . $arr . '" class="btn btn-primary">' . $arr . '</a>&nbsp ';
         }
         echo '</div>';
+    }
+    public function topServer()
+    {
+        if (time() <= 2607602217) {
+            foreach ($this->topServer_Model('server_name') as $key => $value) {
+                if ($value['server_status'] == 3) {
+                    echo '
+            <div class="card">
+            <h5 class="card-header">ТОП Сервер</h5>
+            <div class="card-body">
+                <h5 class="card-title"><img src="https://img.icons8.com/doodle/25/000000/crown--v1.png" /> <a href="server_info.php?server=' . $value['server_name'] . '">' . $value['server_name'] . '</a> <img src="https://img.icons8.com/plasticine/25/000000/filled-like.png" /> ' . $value['server_vote'] . '</h5>
+                <p class="card-text">' . mb_strimwidth($value['server_description'], 0, 650, "...") . '</p>
+                <a href="https://energymu.ru/" class="btn btn-primary">Перейти на сервер</a>
+            </div>
+            </div>
+            ';
+                }
+            }
+        }
+    }
+    public function ServerPageInfo($name)
+    {
+
+        return $this->ServerPageInfo_Model($name);
+
+    }
+    public function addServer($post)
+    {
+        $arr = [
+            'server_name' => htmlspecialchars($post['server_name']),
+            'server_url' => htmlspecialchars($post['server_url']),
+            'server_description' => htmlspecialchars($post['server_description']),
+            'server_version' => htmlspecialchars($post['server_version']),
+            'server_rate' => htmlspecialchars($post['server_rate']),
+            'server_dateopen' => htmlspecialchars($post['server_dateopen']),
+            'server_skype' => htmlspecialchars($post['server_skype']),
+            'server_telegram' => htmlspecialchars($post['server_telegram']),
+            'server_vk' => htmlspecialchars($post['server_vk']),
+            'server_email' => htmlspecialchars($post['server_email'])
+        ];
+
+        $this->connect->query("
+        INSERT INTO `vote_server`
+        (`server_name`, `server_url`, `server_open`, `server_description`, `server_title`, `server_rate`, `server_version`, `server_skype`, `server_telegram`, `server_vk`, `server_game`, `server_vote`, `server_img`) 
+        VALUES 
+        ('" . $arr['server_name'] . "', '" . $arr['server_url'] . "', '" . $arr['server_dateopen'] . "', '" . $arr['server_description'] . "', '" . $arr['server_name'] . "', '" . $arr['server_rate'] . "', '" . $arr['server_version'] . "', '" . $arr['server_skype'] . "', '" . $arr['server_telegram'] . "', '" . $arr['server_vk'] . "', 'muonline', 0, 'https://gh.g4u.by/todolist/img/logo.png')");
+
+        return $arr;
     }
 }
 

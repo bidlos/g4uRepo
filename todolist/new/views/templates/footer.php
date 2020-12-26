@@ -18,5 +18,3 @@
 </body>
 
 </html>
-
-<?php include_once  __DIR__ . "/../module/add_server.php"; ?>
